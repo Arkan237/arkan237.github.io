@@ -89,7 +89,7 @@
           <figure><img class="img-fluid" src="img/img2.png" alt="Uninstalling Snap"></figure>
           
           <h4><b>Langkah 4 : Hapus config snap</b></h4>
-          <p>Setelah kalian mengahpus snap, snap akan meninggalkan file config nya di dalam direktori /home/$USER/snap. Untuk menghapusnya, jalankan <i>command dibawah ini</i></p>
+          <p>Setelah kalian menghapus snap, snap akan meninggalkan file config nya di dalam direktori /home/$USER/snap. Untuk menghapusnya, jalankan <i>command</i> dibawah ini</p>
           <div class="p-3 bg-dark">
             <code class="text-white">rm -rf <span class="text-warning">~/snap</span></code>
           </div>
@@ -106,14 +106,20 @@
           <p>Mungkin kalian akan bertanya seperti itu ketika kalian membaca artikel ini. Sejauh ini, penulis belum menemukan masalah yang serius setelah penulis mencoba menghapus snap pada Ubuntu. Namun penulis menemukan satu masalah yang terjadi. Yaitu kalian tidak bisa memasang <i>package</i> yang memerlukan snap agar bisa terpasang di Ubuntu. Contohnya adalah Firefox dan Chromium.</p>
           <figure><img class="img-fluid" src="img/img3.png" alt="Masalah yang terjadi ketika snap di hold"></figure>
           <p>Hal tersebut terjadi karena <i>package</i> Firefox dan Chromium itu sebenarnya hanya <i>package</i> kosong di dalam <i>repository</i> Ubuntu. Di dalamnya hanya terdapat <i>script</i> untuk memasang Firefox atau Chromium melalui snap. Karena <i>package</i> snapd diatur agar tidak bisa terpasang, maka kita tidak bisa memasang <i>package</i> Firefox dan Chromium di Ubuntu melalui apt. Karena kedua <i>package</i> tersebut membutuhkan snap agar bisa terpasang.</p>
-          <p>Cara mengatasi masalah tersebut tanpa perlu memasang <i>package</i> snapd adalah dengan memasang Firefox atau Chromium secara manual menggunakan file deb. Cara tersebut kurang direkomendasikan karena akan menyulitkan kalian ketika kalian ingin melakukan <i>update</i> pada kedua <i>package</i> tersebut. Cara lainnya adalah dengan menggunakan <a href="https://flatpak.org" target="_blank">Flatpak</a>. Ubtuk tutorial pemasangannya, silahkan kalian lihat di situs resminya atau mungkin nanti penulis akan buat tutorialnya.</p>
+          <p>Cara mengatasi masalah tersebut tanpa perlu memasang <i>package</i> snapd adalah dengan memasang Firefox atau Chromium secara manual menggunakan file deb. Cara tersebut kurang direkomendasikan karena akan menyulitkan kalian ketika kalian ingin melakukan <i>update</i> pada kedua <i>package</i> tersebut. Cara lainnya adalah dengan menggunakan <a href="https://flatpak.org" target="_blank">Flatpak</a>. Untuk tutorial pemasangannya, silahkan kalian lihat di situs resminya atau mungkin nanti penulis akan buat tutorialnya.</p>
 
           <h4><b>Apakah saya perlu menghapus snap pada sistem saya?</b></h4>
           <p>Penulis membuat tutorial ini untuk kalian yang merasa terganggu dengan snap. Kalian tidak wajib untuk mengikuti tutorial ini. Jika kalian memang membutuhkannya dan kalian tidak merasa terganggu, kalian tidak perlu menghapusnya. Namun penulis sendiri lebih suka memasang aplikasi melalui apt atau flatpak. Dan semenjak penulis menggunakan distro berbasis Arch, penulis lebih suka memasang aplikasi melalui <a href="https://wiki.archlinux.org/title/Arch_User_Repository" target="_blank">AUR</a>. Jadi jika kalian lebih suka memasang aplikasi melalui snap, kalian tidak perlu menghapusnya. Namun jika kalian jarang sekali menggunakan snap atau bahkan kalian membencinya, silahkan kalian ikuti tutorial ini untuk menghapusnya.</p>
         </article>
       </div>
       <aside class="col-sm-4">
-        <div class="bg-primary text-center"><h5 class="p-2 text-white">Artikel Lainnya</h5></div>
+        <div class="card">
+          <div class="card-header bg-primary text-center"><h5 class="mt-2 text-white">Artikel Lainnya</h5></div>
+          <div class="card-body">
+            <h5><a class="text-dark text-decoration-none" href="../system-backup-timeshift/">Membuat <i>Backup</i> Sistem dengan Timeshift di Linux</a></h5>
+            <p class="text-muted"><small>Arkan - <time datetime="2022-8-10"></time>10 Agustus 2022</small></p>
+          </div>
+        </div>
         <div class="card">
           <div class="card-body">
             <h5><a class="text-dark text-decoration-none" href="../mitos-tentang-linux/">Mitos Tentang Linux yang Beredar di Masyarakat</a></h5>

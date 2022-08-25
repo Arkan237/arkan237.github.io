@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <title>Membuat Backup Sistem dengan Timeshift</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="Linux, Computer, Software, timeshift, backup, restore">
+  <meta name="description" content="Membuat Backup Sistem dengan Timeshift">
+  <meta name="author" content="Arkan">
+  <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <!-- Navigation bar -->
+  <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../../">Arkan Site</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../../">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../article-list/page1.html">Article</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../About/">About</a>
+          </li>    
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Artikel -->
+  <div class="container-fluid mt-5 px-5">
+    <div class="row">
+      <div class="col-sm-8">
+        <!-- Header -->
+        <header>
+          <h2>Membuat <i>Backup</i> Sistem dengan Timeshift di Linux</h2>
+            
+          <!-- Waktu ditulis dan nama penulis -->
+          <p class="text-secondary"><small>Ditulis pada <time datetime="2022-8-10">10 Agustus 2022 oleh Arkan</time></small></p>
+        </header>
+
+        <!-- Isi Artikel -->
+        <section>
+          <p>Membuat <i>backup</i> data tentunya adalah suatu hal yang sangat penting. Hal ini dilakukan untuk meminimalisir terjadinya kehilangan data. Seperti misalnya, komputernya terkena virus ataupun terjadi kerusakan pada <i>harddisk</i>, sehingga datanya tidak bisa diakses, dan lain sebagainya. Untuk membuat <i>backup</i> data biasa, bisa dilakukan dengan cara menyalin data ke tempat yang lebih aman (seperti misalnya di flash drive). Namun ada juga hal yang sebaiknya kalian lakukan juga, yaitu membuat <i>backup</i> sistem.</p>
+          
+          <figure><img class="img-fluid" src="img/thumb.png" alt="Web Thumbnail"></figure>
+        </section>
+        <article>
+          <h4><b>Mengapa kita perlu membuat <i>backup</i> sistem?</b></h4>
+          <p>Sebenarnya membuat cadangan untuk data pribadi kita sendiri juga sudah cukup. Namun yang artinya, jika kalian melakukan <i>install</i> ulang OS kalian, maka kalian perlu melakukan konfigurasi ulang pada komputer kalian yang tentunya akan memakan waktu yang lama. Dan melakukan konfigurasi ulang sistem pada Linux adalah hal yang sangat merepotkan dan menjadi mimpi buruk bagi kebanyakan pengguna Linux. Oleh karena itu, kita perlu program yang dapat melakukan <i>backup</i> sistem dengan mudah dan dapat di <i>restore</i> dengan mudah juga.</p>
+          <p>Apakah ada program semacam itu? Tentu saja ada. Nama programnya sudah penulis tulis di judul artikel ini, yaitu <b>Timeshift</b>.</p>
+          
+          <h4><b>Timeshift, program untuk membuat <i>backup</i> sistem dengan mudah di Linux</b></h4>
+          <figure><img class="img-fluid mt-2" src="img/wthumb.png" alt="Web Thumbnail 2"></figure>
+          <p>Timeshift adalah program yang dapat kalian gunakan untuk membuat <i>backup</i> sistem di Linux. Timeshift dibuat dan dikembangkan oleh Tony George. Program ini bersifat <i>open source</i> dan tentunya gratis. Yang artinya, kalian tidak perlu mengeluarkan uang untuk dapat menggunakan program ini. Program ini mirip dengan program <b>System Restore</b> pada OS Jendela dan <b>Time Machine</b> pada OS Buah.</p>
+          <p>Berbeda halnya dengan OS Jendela dan Buah, di Linux tidak terdapat program untuk membuat cadangan sistem dengan mudah secara bawaan. Sehingga, aplikasi <b>Timeshift</b> ini bersifat <b><i>third-party software</i> (perangkat lunak pihak ketiga)</b>. Namun ada juga distro yang sudah menyediakan aplikasi <b>Timeshift</b> secara bawaan.</p>
+          <p>Karena program ini bersifat open source, maka kalian dapat melihat <i>source code</i> dari program timeshift. Kalian juga dapat ikut berkontribusi pada pengembangan timeshift. Untuk melakukannya, kalian dapat langsung melihat <i>repository</i> nya pada <a href="https://github.com/teejee2008/timeshift" target="_blank">GitHub</a>.</p>
+          
+          <h4><b>Instalasi Timeshift</b></h4>
+          <p>Karena tidak tersedia secara bawaan, maka kita perlu meng-<i>install</i> nya secara manual. Kita dapat meng-<i>install</i> nya menggunakan <i>package manager</i> bawaan dari distro yang digunakan.</p>
+          <p>Untuk distro Ubuntu (20.04+) : </p>
+          <div class="p-3 bg-dark">
+            <code class="text-white"><span class="text-success">sudo</span> apt install <span class="text-warning">timeshift</span></code>
+          </div>
+          <br>
+          <p>Untuk distro Fedora : </p>
+          <div class="p-3 bg-dark">
+            <code class="text-white"><span class="text-success">sudo</span> dnf install <span class="text-warning">timeshift</span></code>
+          </div>
+          <br>
+          <p>Untuk distro Arch, kalian dapat meng-<i>install</i> nya melalui <a href="https://wiki.archlinux.org/title/Arch_User_Repository" target="_blank">AUR</a>. Kalian dapat meng-<i>install</i> nya secara manual atau menggunakan AUR Helper favorit kalian. Sebagai contoh, penulis menggunakan <a href="https://github.com/Jguer/yay" target="_blank">yay</a> : </p>
+          <div class="p-3 bg-dark">
+            <code class="text-white"> yay -S <span class="text-warning">timeshift</span></code>
+          </div>
+          <br>
+          
+          <h4><b>Mengonfigurasi Timeshift</b></h4>
+          <p>Setelah kalian selesai meng-<i>install</i>, maka kalian dapat mencoba untuk membukanya melalui menu aplikasi yang tersedia pada DE yang kalian gunakan. Setelah kalian membukanya, sistem akan menanyakan <i>password</i> user kalian. Hal ini terjadi karena timeshift membutuhkan hak akses root untuk dapat berjalan dengan baik.</p>
+          <figure class="text-center"><img class="img-fluid" src="img/img1.png" alt="Sistem menanyakan password user"></figure>
+          <p>Setelah kalian memasukan <i>password</i> user kalian, maka timeshift akan langsung terbuka. Dan kalian akan disambut dengan tampilan seperti pada gambar. Bagian ini disebut dengan <i><b>setup wizard</b></i>. Disini kalian dapat mengonfigurasi timeshift dengan mudah. Kalian hanya perlu membaca keterangan yang ada dan menekan tombol <q>Next</q>.</p>
+          <figure class="text-center"><img class="img-fluid" src="img/img2.png" alt="Tampilan setup wizard pada timeshift"></figure>
+          <div class="alert alert-success">
+            <strong>Tips</strong><br>
+            Jika dalam komputer/laptop kalian terdapat lebih dari 1 <i>storage drive</i>. Penulis menyarankan kalian untuk menyimpan <i>snapshot</i> timeshift pada <i>storage drive</i> satunya. Hal ini dilakukan agar ketika <i>storage drive</i> utama kalian rusak, maka <i>snapshot</i> nya tetap tersimpan dengan aman dan kalian dapat memulihkannya ketika kalian sudah mengganti <i>storage drive</i> utamanya.
+          </div>
+          
+          <h4><b>Membuat <i>snapshot</i> pada timeshift</b></h4>
+          <p><i>Snapshot</i> adalah kumpulan data sistem yang sudah dicadangkan oleh timeshift. Untuk membuatnya, kalian hanya perlu mengklik tombol <q>Create</q>. Maka timeshift akan membuatkan snapshot secara otomatis.</p>
+          <figure class="text-center">
+            <img class="img-fluid" src="img/img4.png" alt="Tombol untuk membuat snapshot timeshift">
+            <figcaption class="mt-2">Klik tombol <q>Create</q> untuk mulai membuat snapshot pada timeshift</figcaption>
+          </figure>
+          <figure class="text-center">
+            <img class="img-fluid" src="img/img5.png" alt="Proses pembuatan snapshot timeshift">
+            <figcaption class="mt-2">Timeshift akan mulai membuat snapshot</figcaption>
+          </figure>
+          <figure class="text-center mb-4">
+            <img class="img-fluid" src="img/img6.png" alt="Snapshot yang sudah dibuat">
+            <figcaption class="mt-2">Snapshot yang sudah dibuat sebelumnya</figcaption>
+          </figure>
+
+          <h4><b>Kapan saya harus membuat <i>snapshot</i> di timeshift?</b></h4>
+          <p>Sebenarnya tidak ada aturan mengenai kapan kalian harus membuat <i>snapshot</i> di timeshift. Kalian bebas menentukan kapan kalian harus membuat <i>snapshot</i>. Mau itu setiap bulan, minggu, hari, atau bahkan setiap kali kalian menyalakan komputer, tidak masalah.</p>
+          <p>Kalau penulis sendiri, lebih suka membuat <i>snapshot</i> secara manual sebelum penulis melakukan <i>update</i> sistem. Apalagi penulis sendiri menggunakan distro <i>rolling release</i>. Hal tersebut dilakukan agar kalau misalnya terdapat masalah setelah <i>update</i>, penulis tidak perlu repot-repot mencari tahu cara memperbaiki masalahnya. Cukup buka timeshift lalu tinggal <i>restore</i> deh.</p>
+          <p>Selain membuat <i>snapshot</i> secara manual, penulis juga mengatur timeshift agar membuat <i>snapshot</i> secara otomatis setiap bulannya. Hal tersebut dilakukan untuk berjaga-jaga kalau misalnya penulis melakukan suatu hal dan lupa membuat <i>snapshot</i>. Agak ribet soalnya kalau harus menyelesaikan masalahnya sendiri.</p>
+          <figure class="text-center"><img src="img/img7.png" alt="Scheduled Snapshots on Timeshift" class="img-fluid"></figure>
+
+          <h4><b><i>Restore snapshot</i> dari Timeshift</b></h4>
+          <p>Misalnya suatu ketika kalian mengalami masalah pada komputer kalian. Untungnya, kalian sudah membuat <i>snapshot</i> di Timeshift. Namun bagaimana cara me-<i>restore</i> nya? Caranya cukup mudah. Kalian hanya perlu membuka Timeshift, lalu memilih <i>snapshot</i> yang mau di-<i>restore</i>, setelah itu klik tombol <b><i>Restore</i></b>.</p>
+          <p>Namun bagaimana kalau rusaknya agak parah sampai komputernya tidak bisa masuk ke OS nya? Tenang saja, di Linux ada yang namanya <b><i>Live boot</i></b>. Kalian bisa me-<i>restore snapshot</i> Timeshift dari sana. Bagaimana caranya? Pertama kalian perlu masuk ke <i>Live boot</i> Linux yang kalian gunakan (atau menggunakan distro yang berbeda juga tidak masalah seharusnya). Setelah itu, <i>install</i> Timeshift dalam mode <i>Live boot</i>. Setelah itu, lakukan cara yang sama seperti me-<i>restore snapshot</i> ketika komputer kalian bisa <i>booting</i> dengan normal.</p>
+          <p>Jika kalian menyimpan <i>snapshot</i> nya di dalam <i>external drive</i> (seperti di HDD External, Flash Drive, dsb), sebaiknya kalian colokan dulu <i>external drive</i> nya ke komputer kalian sebelum kalian membuka Timeshift. Hal tersebut dilakukan agar Timeshift dapat langsung menemukan <i>snapshot</i> yang tersimpan.</p>
+
+          <h4><b>Kesimpulan</b></h4>
+          <p>Menurut penulis sendiri, Timeshift adalah <i>life saver</i>. Karena dengan menggunakan Timeshift, kita tidak merasa stress karena harus melakukan konfigurasi ulang pada sistem kita. Tinggal <i>restore snapshot</i> yang sudah kita buat, dan semuanya akan kembali seperti sebelum masalah terjadi tanpa harus dikonfigurasi ulang. Timeshift ini juga sangat berguna jika kalian sudah <i>stuck</i> pada suatu masalah dan jalan terakhirnya adalah <i>install</i> ulang. Penulis sendiri juga sering menggunakan Timeshift untuk menyelesaikan masalah yang ada pada komputer penulis.</p>
+        </article>
+      </div>
+      <aside class="col-sm-4">
+        <div class="card">
+          <div class="card-header bg-primary text-center"><h5 class="mt-2 text-white">Artikel Lainnya</h5></div>
+          <div class="card-body">
+            <h5><a class="text-dark text-decoration-none" href="../cara-hapus-snap-di-ubuntu/">Cara Menghapus Snap Di Ubuntu 22.04</a></h5>
+            <p class="text-muted"><small>Arkan - <time datetime="2022-8-7"></time>7 Agustus 2022</small></p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5><a class="text-dark text-decoration-none" href="../mitos-tentang-linux/">Mitos Tentang Linux yang Beredar di Masyarakat</a></h5>
+            <p class="text-muted"><small>Arkan - <time datetime="2022-7-4"></time>4 Juli 2022</small></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="mt-5 p-4 bg-dark text-white text-center">Copyright &COPY; 2022 Arkan</footer>
+</body>
+</html>
